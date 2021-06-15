@@ -1,7 +1,9 @@
 import me.arkadash.example.MyConstant
+import me.arkadash.sdk.genereted.GeneratedConstants.Dinora
 
 fun main() {
-    println("Initial commit")
+    println(Dinora)
+
 }
 
 @MyConstant(propName = "Dinora", "Backend")

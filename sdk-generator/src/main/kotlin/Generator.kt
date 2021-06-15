@@ -31,7 +31,7 @@ class Generator: AbstractProcessor() {
         elementsWithAnnotation?.forEach { element ->
             val myConstantAnnotation = element.getAnnotation(MyConstant::class.java)
             objBuilder.addProperty(
-                createPropBuilder(myConstantAnnotation.propName, myConstantAnnotation.propValue).build()
+                createPropBuilder(myConstantAnnotation.propName, element.simpleName.toString()).build()
             )
         }
 
