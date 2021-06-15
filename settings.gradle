@@ -1,2 +1,5 @@
 rootProject.name = 'KotlinAnnotationDemo'
 
+include 'sample'
+include 'sdk'
+include 'sdk-generator'
