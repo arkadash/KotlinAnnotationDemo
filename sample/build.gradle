@@ -9,3 +9,10 @@ version sdk_version
 repositories {
     mavenCentral()
 }
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+
+    compileOnly project(":sdk")
+    kapt project(":sdk-generator")
+}
