@@ -1,4 +1,5 @@
 import com.google.auto.service.AutoService
+import me.arkadash.example.MyConstant
 import javax.annotation.processing.AbstractProcessor
 import javax.annotation.processing.ProcessingEnvironment
 import javax.annotation.processing.Processor
@@ -18,7 +19,7 @@ class Generator: AbstractProcessor() {
     }
 
     override fun getSupportedAnnotationTypes(): MutableSet<String> {
-        return TODO("Add Annotations")
+        return mutableSetOf(MyConstant::class.java.name)
     }
 
     override fun process(annotations: MutableSet<out TypeElement>?, roundEnv: RoundEnvironment?): Boolean {
