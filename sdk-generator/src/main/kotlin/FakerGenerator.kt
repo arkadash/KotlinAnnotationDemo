@@ -83,7 +83,7 @@ class FakerGenerator: AbstractProcessor() {
                 return "Random.nextInt(0, 100)"
             }
             Double::class.asClassName() -> {
-                return "Random.nextDouble(0, 100)"
+                return "Random.nextDouble(0.0, 1000.0)"
             }
         }
         return "\"${getRandomString(12)}\""
@@ -96,14 +96,18 @@ class FakerGenerator: AbstractProcessor() {
             .joinToString("")
     }
 
+
     private fun buildFunction(fileName: String) = FunSpec.builder("fake")
         .addStatement("println(%P)", fileName).build()
 
     private fun getTypeName(type: TypeMirror): ClassName {
-        return if (type.toString() == "java.lang.String") {
-            ClassName("kotlin", "String")
-        } else {
-            ClassName("kotlin", "Int")
+        return when {
+            type.toString() == "java.lang.String" -> {
+                ClassName("kotlin", "String")
+            }
+            else -> {
+                ClassName("kotlin", "Int")
+            }
         }
     }
 

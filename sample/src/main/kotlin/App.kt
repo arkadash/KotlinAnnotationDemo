@@ -14,5 +14,6 @@ fun Quala() {
 class Ball(
     val color: String,
     val owner: String,
-    val size: Int
+    val width: Int,
+    val height: Int
 )
