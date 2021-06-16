@@ -9,7 +9,7 @@ import javax.lang.model.SourceVersion
 import javax.lang.model.element.TypeElement
 
 @AutoService(Processor::class)
-class Generator: AbstractProcessor() {
+class ConstantGenerator: AbstractProcessor() {
 
     override fun getSupportedSourceVersion(): SourceVersion {
         return SourceVersion.latestSupported()
